@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--自定义的 id 文件，这里定义的 id 用于在布局文件中给控件赋值 id-->
+    <!--这里定义的 id，赋值的时候是这样的 android:id="@id/titleView"-->
+    <!--而我们平时使用的 android:id="@+id/titleView" -->
+    <!--而在　Java　代码中的用法都一样的，通过 Ｒ.id.XXX 来找到某个控件-->
+    <!--这二种方法都可以给控件指定 id，区别在于平时用的 +id 是系统先在 R 文件中去找这个 id，-->
+    <!--有就用，没有的就会新建一条 id 值，而我们自定义的这个 id 则是一开始就定好了的-->
+    <!--主要使用场景是在写 Base 类时，可以先用这个 id 来初始化控件，而不必依赖布局文件-->
+    <!--需要注意的是，在 Base 类中初始化了的控件，如果它的子类需要这个控件，-->
+    <!--需要先在布局文件中声明这个控件，并且要用同一个 id，不然程序会报错-->
+    <!--此控件的公共逻辑写在 Base 类中，逻辑有变化的重写相应方法即可-->
+    <item name = "titleView" type="id"/>
+    <item name = "recyclerView" type="id"/>
+    <item name = "swipeRefresh" type="id"/>
+</resources>

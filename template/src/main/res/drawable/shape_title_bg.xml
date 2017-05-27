@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <!-- 填充的颜色 -->
+    <!--<solid android:backgroundColor="@mipmap/default_title_float.9" />-->
+    <solid android:color="@color/colorAccent"/>
+    <!-- 圆角 -->
+    <corners android:radius="360dp" />
+
+    <!-- 大小 -->
+    <size android:width="15dp"
+          android:height="15dp" />
+    <!-- 边距 -->
+    <padding
+    android:bottom="2dp"
+    android:left="2dp"
+    android:right="2dp"
+    android:top="2dp" />
+
+</shape>
