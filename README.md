@@ -45,6 +45,7 @@ mySP = new SPUtils(AppUtils.getAppName(mContext));
 
 ## 本项目依赖的一些库
 glide，gson，eventBus，
+
 [BaseRecyclerViewAdapterHelper](https://github.com/CymChad/BaseRecyclerViewAdapterHelper)
 [Fragmentation](https://github.com/YoKeyword/Fragmentation)
 [FlycoTabLayout](https://github.com/H07000223/FlycoTabLayout)
