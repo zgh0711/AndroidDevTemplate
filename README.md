@@ -9,28 +9,31 @@ compile 'com.zgh0711.template:template:1.0'
 ```
 
 ## Tips:
-1. 因为依赖了 BaseRecyclerViewAdapterHelper 这个库，
+1. 因为依赖了 AndroidUtilCode 这个库，所以项目的 minSdkVersion
+必须为 19 及以上版本，不然 gradle 也会报错。
+
+2. 因为依赖了 BaseRecyclerViewAdapterHelper 这个库，
 所以需要在项目根目录的 build.gradle 文件中的 allprojects
 节点下添加以下内容,不然 gradle 会报错。
-```
-allprojects {
-    repositories {
-        jcenter()
-        maven { url "https://jitpack.io" }
+    ```
+    allprojects {
+        repositories {
+            jcenter()
+            maven { url "https://jitpack.io" }
+        }
     }
-}
-```
-2. 因为依赖了 AndroidUtilCode 这个库，所以项目的 minSdkVersion
-必须为 19 及以上版本，不然 gradle 也会报错。
+    ```
+
 3. 需要在 Application 中初始化的东西
-```
-// Logger初始化配置
-Logger.init("MyAPP").methodCount(1).methodOffset(1).hideThreadInfo();
-// Utils库初始化以及初始化 SPUtils 和 SP 文件
-Utils.init(mContext);
-// 如果项目中需要用到 SP 文件，也需要在这里初始化
-mySP = new SPUtils(AppUtils.getAppName(mContext));
-```
+    ```
+    // Logger初始化配置
+    Logger.init("MyAPP").methodCount(1).methodOffset(1).hideThreadInfo();
+    // Utils库初始化以及初始化 SPUtils 和 SP 文件
+    Utils.init(mContext);
+    // 如果项目中需要用到 SP 文件，也需要在这里初始化
+    mySP = new SPUtils(AppUtils.getAppName(mContext));
+    ```
+
 
 ## 功能
 #### BaseActivity 和 BaseFragment
