@@ -33,8 +33,9 @@ public class MyApp extends Application {
 
         // Logger初始化配置
         Logger.init("MyAPP").methodCount(1).methodOffset(1).hideThreadInfo();
-        //Utils库初始化以及初始化 SPUtils 和 SP 文件
+        // Utils库初始化以及初始化 SPUtils 和 SP 文件
         Utils.init(mContext);
+        // 如果项目中需要用到 SP 文件，也需要在这里初始化
         mySP = new SPUtils(AppUtils.getAppName(mContext));
 
         if (log_on) {
