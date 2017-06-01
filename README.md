@@ -10,7 +10,7 @@ compile 'com.zgh0711.template:template:1.0'
 
 ## Tips:
 1. 因为依赖了 AndroidUtilCode 这个库，所以项目的 minSdkVersion
-必须为 19 及以上版本，不然 gradle 也会报错。
+必须为 19 及以上版本，不然 gradle 会报错。
 
 2. 因为依赖了 BaseRecyclerViewAdapterHelper 这个库，
 所以需要在项目根目录的 build.gradle 文件中的 allprojects
