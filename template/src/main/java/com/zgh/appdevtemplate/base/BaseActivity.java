@@ -1,11 +1,15 @@
 package com.zgh.appdevtemplate.base;
 
 import android.app.Activity;
+import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.ColorInt;
 import android.support.annotation.Nullable;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
 
 import com.jaeger.library.StatusBarUtil;
 import com.zgh.appdevtemplate.R;
@@ -117,5 +121,41 @@ public abstract class BaseActivity extends SupportActivity {
         EventBus.getDefault().unregister(this);
         ActivityStackManager.getInstance().removeActivity(new WeakReference<Activity>(this));
         super.onDestroy();
+    }
+
+    /**
+     * 全局监听点击事件，如果不是 EditText 就隐藏键盘.
+     * 关于键盘适应界面的问题，可以在 Manifest 文件中给 Activity 设置
+     * android:windowSoftInputMode 属性，属性值选择 adjustPan 键盘就不会把界面顶上去了
+     * 这个属性还有其他的值可以用，具体含义百度一下就行了
+     */
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        if (ev.getAction() == MotionEvent.ACTION_DOWN) {
+            View v = getCurrentFocus();
+            if (isShouldHideKeyboard(v, ev)) {
+                InputMethodManager
+                        imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(v.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+            }
+        }
+        return super.dispatchTouchEvent(ev);
+    }
+
+    /**
+     * 根据EditText所在坐标和用户点击的坐标相对比，来判断是否隐藏键盘
+     */
+    private boolean isShouldHideKeyboard(View v, MotionEvent event) {
+        if (v != null && (v instanceof EditText)) {
+            int[] l = {0, 0};
+            v.getLocationInWindow(l);
+            int left = l[0],
+                    top = l[1],
+                    bottom = top + v.getHeight(),
+                    right = left + v.getWidth();
+            return !(event.getX() > left && event.getX() < right
+                     && event.getY() > top && event.getY() < bottom);
+        }
+        return false;
     }
 }
