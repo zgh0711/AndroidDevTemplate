@@ -35,7 +35,7 @@ android {
     }
 }
 
-version = "1.0.1"
+version = "1.0.2"
 
 def siteUrl = 'https://github.com/zgh0711/AndroidDevTemplate'    // project homepage
 def gitUrl = 'https://github.com/zgh0711/AndroidDevTemplate.git' // project git
