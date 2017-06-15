@@ -5,7 +5,7 @@ The Android quickly develop template.
 
 ## How to Start?
 ```
-compile 'com.zgh0711.template:template:1.0.1'
+compile 'com.zgh0711.template:template:1.0.2'
 ```
 
 ## Tips:
