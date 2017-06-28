@@ -417,9 +417,9 @@ public class EasyPickerView extends View {
      * 滚动发生变化时的回调接口
      */
     public interface OnScrollChangedListener {
-        public void onScrollChanged(int curIndex);
+        void onScrollChanged(int curIndex);
 
-        public void onScrollFinished(int curIndex);
+        void onScrollFinished(int curIndex);
     }
 
     private OnScrollChangedListener onScrollChangedListener;

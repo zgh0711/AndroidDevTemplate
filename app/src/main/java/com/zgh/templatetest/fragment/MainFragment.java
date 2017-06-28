@@ -7,11 +7,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.zgh.appdevtemplate.R;
 import com.zgh.appdevtemplate.base.BaseFragment;
 import com.zgh.appdevtemplate.event.EventCenter;
 import com.zgh.appdevtemplate.view.BottomBar;
 import com.zgh.appdevtemplate.view.BottomBarTab;
+import com.zgh.templatetest.R;
 
 import me.yokeyword.fragmentation.SupportFragment;
 

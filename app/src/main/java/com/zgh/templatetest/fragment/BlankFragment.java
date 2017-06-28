@@ -9,10 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.zgh.appdevtemplate.R;
 import com.zgh.appdevtemplate.base.BaseListFragment;
 import com.zgh.appdevtemplate.event.EventCenter;
 import com.zgh.appdevtemplate.util.LogUtil;
+import com.zgh.templatetest.R;
 
 import java.util.ArrayList;
 
@@ -68,6 +68,11 @@ public class BlankFragment extends BaseListFragment<String> {
     }
 
     @Override
+    protected void initFooterView(View footerView) {
+
+    }
+
+    @Override
     protected void onRefreshListener() {
 
     }
@@ -78,7 +83,7 @@ public class BlankFragment extends BaseListFragment<String> {
     }
 
     @Override
-    protected void MyHolder(BaseViewHolder baseViewHolder, String s) {
+    protected void myHolder(BaseViewHolder baseViewHolder, String s) {
 
     }
 

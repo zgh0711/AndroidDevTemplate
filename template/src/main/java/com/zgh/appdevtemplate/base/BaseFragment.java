@@ -26,15 +26,17 @@ public abstract class BaseFragment extends SupportFragment {
     private static final long WAIT_TIME  = 2000L;
     private              long TOUCH_TIME = 0;
 
-    public View mView;
+    public View      mView;
     public TitleView mTitleView;
 
-    public BaseFragment() {}
+    public BaseFragment() {
+    }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater,
             @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        super.onCreateView(inflater, container, savedInstanceState);
         if (getArguments() != null) {
             getBundleExtras(getArguments());
         }

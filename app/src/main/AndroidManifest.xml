@@ -10,14 +10,38 @@
         android:roundIcon = "@mipmap/ic_launcher_round"
         android:supportsRtl = "true"
         android:theme = "@style/AppTheme">
+        <meta-data
+            android:name = "design_width"
+            android:value = "768" />
+        <meta-data
+            android:name = "design_height"
+            android:value = "1280" />
+
         <activity
             android:name = ".MainActivity"
+            android:screenOrientation = "portrait"
             android:windowSoftInputMode = "adjustPan">
             <intent-filter>
                 <action android:name = "android.intent.action.MAIN" />
 
                 <category android:name = "android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name = ".theMVP.MVPMainActivity"
+            android:screenOrientation = "portrait">
+        </activity>
+        <activity
+            android:name = ".theMVP.presenter.CommonMVPActivity"
+            android:screenOrientation = "portrait">
+        </activity>
+        <activity
+            android:name = ".theMVP.presenter.ListMVPActivity"
+            android:screenOrientation = "portrait">
+        </activity>
+        <activity
+            android:name = ".theMVP.presenter.BindDataActivity"
+            android:screenOrientation = "portrait">
         </activity>
     </application>
 

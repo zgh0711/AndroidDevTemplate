@@ -35,7 +35,7 @@ android {
     }
 }
 
-version = "1.0.2"
+version = "2.0.0"
 
 def siteUrl = 'https://github.com/zgh0711/AndroidDevTemplate'    // project homepage
 def gitUrl = 'https://github.com/zgh0711/AndroidDevTemplate.git' // project git
@@ -137,15 +137,23 @@ dependencies {
     compile 'com.android.support:support-v4:25.3.1'
     compile 'com.android.support:design:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.12'
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.22'
     compile 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
     compile 'com.loopj.android:android-async-http:1.4.9'
-    compile 'com.jaeger.statusbaruitl:library:1.3.6'
+    compile 'com.jaeger.statusbaruitl:library:1.4.0'
     compile 'com.github.bumptech.glide:glide:3.7.0'
     compile 'me.yokeyword:fragmentation:0.10.3'
     compile 'com.google.code.gson:gson:2.8.0'
     compile 'org.greenrobot:eventbus:3.0.0'
-    compile 'com.blankj:utilcode:1.3.7'
-    compile 'com.orhanobut:logger:1.15'
+    compile 'com.blankj:utilcode:1.7.1'
+    compile 'com.orhanobut:logger:2.1.1'
+//    compile 'com.zhy:autolayout:1.4.5'
+    //必须使用
+    compile 'com.lzy.net:okgo:3.0.1'
+    //以下三个选择添加，okrx和okrx2不能同时使用
+//    compile 'com.lzy.net:okrx:1.0.1'
+//    compile 'com.lzy.net:okrx2:2.0.1'
+//    compile 'com.lzy.net:okserver:2.0.1'
+
     testCompile 'junit:junit:4.12'
 }

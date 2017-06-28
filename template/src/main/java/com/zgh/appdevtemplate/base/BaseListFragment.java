@@ -32,11 +32,12 @@ public abstract class BaseListFragment<T> extends BaseFragment
     protected static final int     STAGGERED_GRID_LAYOUT = 2;//瀑布流布局
     private                int     itemLayoutResId       = -1;//子布局id
 
-    private   View                    mHeaderView;
+    private   View                    mHeaderView,mFooterView;
     private   LoadMoreView            mLoadMoreView;
     protected RecyclerView            mRecyclerView;
     protected SwipeRefreshLayout      mRefreshLayout;
     protected BaseRecyclerViewAdapter mAdapter;
+    protected ArrayList<T> datas = new ArrayList<>();
 
     protected void initView(View view) {
         mRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipeRefresh);
@@ -47,7 +48,7 @@ public abstract class BaseListFragment<T> extends BaseFragment
             throw new RuntimeException("itemLayoutResId is null!");
         }
 
-        mAdapter = new BaseRecyclerViewAdapter(itemLayoutResId, new ArrayList<T>());
+        mAdapter = new BaseRecyclerViewAdapter(itemLayoutResId, datas);
         initRecyclerView();
         mAdapter.setLoadMoreView(getLoadMoreView());
         mRecyclerView.setAdapter(mAdapter);
@@ -99,6 +100,22 @@ public abstract class BaseListFragment<T> extends BaseFragment
      * 初始化 headerView 中的控件及相关逻辑
      */
     protected abstract void initHeaderView(View headerView);
+
+    /**
+     * 添加 footerView
+     */
+    protected void setFooterView(@NonNull Context context, @LayoutRes int footerView) {
+        if (mRecyclerView != null && mAdapter != null) {
+            mFooterView = LayoutInflater.from(context).inflate(footerView, mRecyclerView, false);
+            mAdapter.setFooterView(mFooterView);
+            initFooterView(mFooterView);
+        }
+    }
+
+    /**
+     * 初始化 footerView 中的控件及相关逻辑
+     */
+    protected abstract void initFooterView(View footerView);
 
     /**
      * 开启下拉刷新并设置刷新颜色
@@ -222,7 +239,7 @@ public abstract class BaseListFragment<T> extends BaseFragment
     /**
      * adapter内的处理
      */
-    protected abstract void MyHolder(BaseViewHolder baseViewHolder, T t);
+    protected abstract void myHolder(BaseViewHolder baseViewHolder, T t);
 
     public class BaseRecyclerViewAdapter extends BaseQuickAdapter<T, BaseViewHolder> {
 
@@ -232,7 +249,7 @@ public abstract class BaseListFragment<T> extends BaseFragment
 
         @Override
         protected void convert(BaseViewHolder baseViewHolder, T t) {
-            MyHolder(baseViewHolder, t);
+            myHolder(baseViewHolder, t);
         }
     }
 

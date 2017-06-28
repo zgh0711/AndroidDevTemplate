@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.support.annotation.ColorInt;
 import android.support.annotation.RequiresApi;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -16,6 +17,7 @@ import android.support.v7.app.AlertDialog;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
 import com.flyco.tablayout.listener.OnTabSelectListener;
+import com.jaeger.library.StatusBarUtil;
 import com.zgh.appdevtemplate.base.BaseActivity;
 import com.zgh.appdevtemplate.event.EventCenter;
 import com.zgh.appdevtemplate.model.TabEntity;
@@ -34,6 +36,11 @@ public class MainActivity extends BaseActivity {
     private int[]                      mIconSelectIds   = {
             R.mipmap.tab_home_select, R.mipmap.tab_speech_select, R.mipmap.tab_contact_select,
             R.mipmap.tab_more_select};
+
+    @Override
+    protected void setStatusBarColor(@ColorInt int color, int alpha) {
+        StatusBarUtil.setColor(this,getResources().getColor(R.color.colorPrimary));
+    }
 
     @Override
     protected void initContentView(Bundle savedInstanceState) {

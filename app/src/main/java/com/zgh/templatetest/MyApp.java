@@ -7,7 +7,10 @@ import android.content.Intent;
 
 import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.Utils;
+import com.orhanobut.logger.AndroidLogAdapter;
+import com.orhanobut.logger.FormatStrategy;
 import com.orhanobut.logger.Logger;
+import com.orhanobut.logger.PrettyFormatStrategy;
 import com.zgh.appdevtemplate.util.AppUtils;
 import com.zgh.appdevtemplate.util.LogUtil;
 import com.zgh.appdevtemplate.util.SPUtils;
@@ -32,7 +35,16 @@ public class MyApp extends Application {
         mContext = getApplicationContext();
 
         // Logger初始化配置
-        Logger.init("MyAPP").methodCount(1).methodOffset(1).hideThreadInfo();
+        FormatStrategy strategy = PrettyFormatStrategy
+                .newBuilder()
+                .showThreadInfo(false)  // 是否显示线程信息. Default true
+                .methodCount(1)         // 显示多少个方法. Default 2
+//                .methodOffset(5)        // 隐藏内部调用的方法数. Default 5
+//                .logStrategy(customLog) // 修改日志打印的位置. Default LogCat
+                .tag("APP")   // 全局 TAG. Default PRETTY_LOGGER
+                .build();
+        Logger.addLogAdapter(new AndroidLogAdapter(strategy));
+
         // Utils库初始化以及初始化 SPUtils 和 SP 文件
         Utils.init(mContext);
         // 如果项目中需要用到 SP 文件，也需要在这里初始化
