@@ -39,7 +39,7 @@
             android:clickable="true"
             android:gravity="center"
             android:text="99+"
-            android:textColor="@color/white"
+            android:textColor="@android:color/white"
             android:textSize="10sp"
             android:visibility="gone"/>
     </FrameLayout>
@@ -54,7 +54,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|center_vertical"
-            android:textColor="@color/white"
+            android:textColor="@android:color/white"
             android:textSize="18sp"/>
 
         <ImageButton
@@ -75,9 +75,9 @@
             android:id="@+id/tabLayout_titleView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:tabIndicatorColor="@color/white"
-            app:tabSelectedTextColor="@color/white"
-            app:tabTextColor="@color/white"/>
+            app:tabIndicatorColor="@android:color/white"
+            app:tabSelectedTextColor="@android:color/white"
+            app:tabTextColor="@android:color/white"/>
     </FrameLayout>
 
     <FrameLayout
@@ -91,7 +91,7 @@
             android:layout_height="match_parent"
             android:clickable="true"
             android:gravity="center"
-            android:textColor="@color/white"
+            android:textColor="@android:color/white"
             android:textSize="16sp"/>
 
         <ImageButton
@@ -110,7 +110,7 @@
             android:background="@drawable/shape_title_bg"
             android:clickable="true"
             android:gravity="center"
-            android:textColor="@color/white"
+            android:textColor="@android:color/white"
             android:textSize="10sp"
             android:visibility="gone"/>
 

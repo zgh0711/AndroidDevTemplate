@@ -13,6 +13,7 @@ import android.text.style.ForegroundColorSpan;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -117,7 +118,7 @@ public class DevelopUtils {
             return editText.getText().toString();
         } else {
             if (!TextUtils.isEmpty(errInfo)) {
-                ToastUtils.showShort(context, errInfo);
+                Toast.makeText(context, errInfo, Toast.LENGTH_SHORT).show();
                 return "";
             } else {
                 return "";
@@ -134,7 +135,7 @@ public class DevelopUtils {
             return textView.getText().toString();
         } else {
             if (!TextUtils.isEmpty(errInfo)) {
-                ToastUtils.showShort(context, errInfo);
+                Toast.makeText(context,errInfo,Toast.LENGTH_SHORT).show();
                 return "";
             } else {
                 return "";

@@ -2,11 +2,11 @@ package com.zgh.templatetest.theMVP.delegate;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Toast;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.zgh.appdevtemplate.theMVP.view.BaseDelegate;
-import com.zgh.appdevtemplate.util.ToastUtils;
 import com.zgh.templatetest.R;
 
 /**
@@ -21,7 +21,7 @@ public class ListDelegate extends BaseDelegate {
         mRecyclerView.addOnItemTouchListener(new OnItemClickListener() {
             @Override
             public void onSimpleItemClick(BaseQuickAdapter adapter, View view, int position) {
-                ToastUtils.showShort(getActivity(), "click");
+                Toast.makeText(getActivity(), "click", Toast.LENGTH_SHORT).show();
             }
         });
     }

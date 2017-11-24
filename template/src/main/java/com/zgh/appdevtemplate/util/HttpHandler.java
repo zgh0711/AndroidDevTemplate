@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.text.TextUtils;
 
+import com.blankj.utilcode.util.LogUtils;
 import com.loopj.android.http.TextHttpResponseHandler;
 import com.zgh.appdevtemplate.constant.MyConfig;
 import com.zgh.appdevtemplate.model.ResponseInfo;
@@ -112,13 +113,13 @@ public abstract class HttpHandler extends TextHttpResponseHandler {
     private void log(String type, int statusCode, int requestCode, String responseString) {
         if (responseString != null) {
             if (type.equals("成功")) {
-                LogUtil.d(type, "mUrl --> " + mUrl + "\nstatusCode --> " + statusCode +
-                        "\nrequestCode --> " + requestCode);
-                LogUtil.json(responseString);
+                LogUtils.d(type, "mUrl --> " + mUrl + "\nstatusCode --> " + statusCode +
+                                 "\nrequestCode --> " + requestCode);
+                LogUtils.json(responseString);
             } else {
-                LogUtil.d(type, "mUrl --> " + mUrl + "\nstatusCode --> " + statusCode +
-                        "\nrequestCode --> " + requestCode + "\nFailureMsg --> " +
-                        responseString);
+                LogUtils.d(type, "mUrl --> " + mUrl + "\nstatusCode --> " + statusCode +
+                                 "\nrequestCode --> " + requestCode + "\nFailureMsg --> " +
+                                 responseString);
             }
         }
     }

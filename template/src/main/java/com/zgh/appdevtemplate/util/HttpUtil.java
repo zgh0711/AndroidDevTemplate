@@ -90,7 +90,7 @@ public class HttpUtil {
             showDialog(url, show, handler);
             mClient.get(url, params, handler);
         } else {
-            ToastUtils.showShort(mContext, "网络连接不可用,请设置网络");
+//            ToastUtils.showShort(mContext, "网络连接不可用,请设置网络");
         }
     }
 
@@ -110,7 +110,7 @@ public class HttpUtil {
             showDialog(url, true, msg, handler);
             mClient.get(url, params, handler);
         } else {
-            ToastUtils.showShort(mContext, "网络连接不可用,请设置网络");
+//            ToastUtils.showShort(mContext, "网络连接不可用,请设置网络");
         }
     }
 
@@ -130,7 +130,7 @@ public class HttpUtil {
             showDialog(url, show, handler);
             mClient.post(url, params, handler);
         } else {
-            ToastUtils.showShort(mContext, "网络连接不可用,请设置网络");
+//            ToastUtils.showShort(mContext, "网络连接不可用,请设置网络");
         }
     }
 
@@ -150,7 +150,7 @@ public class HttpUtil {
             showDialog(url, true, msg, handler);
             mClient.post(url, params, handler);
         } else {
-            ToastUtils.showShort(mContext, "网络连接不可用,请设置网络");
+//            ToastUtils.showShort(mContext, "网络连接不可用,请设置网络");
         }
     }
 
@@ -170,7 +170,7 @@ public class HttpUtil {
             showDialog(url, show, handler);
             mClient.delete(url, params, handler);
         } else {
-            ToastUtils.showShort(mContext, "网络连接不可用,请设置网络");
+//            ToastUtils.showShort(mContext, "网络连接不可用,请设置网络");
         }
     }
 
@@ -190,7 +190,7 @@ public class HttpUtil {
             showDialog(url, true, msg, handler);
             mClient.delete(url, params, handler);
         } else {
-            ToastUtils.showShort(mContext, "网络连接不可用,请设置网络");
+//            ToastUtils.showShort(mContext, "网络连接不可用,请设置网络");
         }
     }
 

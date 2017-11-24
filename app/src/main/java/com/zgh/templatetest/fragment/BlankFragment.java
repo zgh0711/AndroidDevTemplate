@@ -8,10 +8,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.blankj.utilcode.util.LogUtils;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.zgh.appdevtemplate.base.BaseListFragment;
 import com.zgh.appdevtemplate.event.EventCenter;
-import com.zgh.appdevtemplate.util.LogUtil;
 import com.zgh.templatetest.R;
 
 import java.util.ArrayList;
@@ -58,8 +58,8 @@ public class BlankFragment extends BaseListFragment<String> {
         }
 
         mAdapter.addData(data);
-        LogUtil.d(mAdapter);
-        LogUtil.d(mRecyclerView);
+        LogUtils.d(mAdapter);
+        LogUtils.d(mRecyclerView);
     }
 
     @Override
